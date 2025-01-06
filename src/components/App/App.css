@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+#root {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media (min-width: 1120px) {
+  #root {
+    max-width: 1010px;
+    /* padding: 0 20px; */
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1119px) {
+  #root {
+    max-width: 767px;
+    padding: 0 5%;
+  }
+}

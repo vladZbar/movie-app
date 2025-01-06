@@ -1,0 +1,112 @@
+.item {
+  height: 251px;
+  width: 490px;
+}
+
+.imgCard {
+  width: 200px;
+  height: 250px;
+}
+
+.genreBtn {
+  width: max-content;
+  height: 25px;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+.genresWrap {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+
+@media (min-width: 1120px) {
+  .imgCard__mob {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 1px 2px 5px 1px #b8b8b8;
+    padding: 15px;
+    overflow: hidden;
+    height: 251px;
+  }
+
+  .contentWrap {
+    display: flex;
+  }
+
+  .titleWrap {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .raiting {
+    height: 30px;
+    width: 30px;
+    align-self: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1119px) {
+  .item {
+    width: 100%;
+  }
+  .imgCard {
+    display: none;
+  }
+  .imgCard__mob {
+    height: 91px;
+    width: 60px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 1px 2px 5px 1px #b8b8b8;
+    padding: 15px;
+    overflow: hidden;
+    height: 251px;
+  }
+
+  .titleWrap {
+    position: relative;
+  }
+
+  .raiting {
+    height: 30px;
+    width: 30px;
+    align-self: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titleText {
+    padding-bottom: 7px;
+  }
+
+  .mobRate {
+    margin-left: auto;
+  }
+}
