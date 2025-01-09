@@ -58,6 +58,7 @@ export default class MovieRated extends Component {
         description={movie.overview}
         guestSessionId={guestSessionId}
         filteredGenres={this.genresFilter(movie.genre_ids, genres)}
+        raiting={movie.vote_average.toFixed(1)}
       />
     ))
     return (
@@ -66,7 +67,7 @@ export default class MovieRated extends Component {
           {error ? <Error /> : false}
           {!loading ? elements : <Loader />}
         </ul>
-        {!loading && ratedMovies.length && Number(total) / 20 > 1 ? (
+        {!loading && ratedMovies.length && Number(total) > 20 ? (
           <Pagination
             style={{ marginBottom: '20px', justifySelf: 'center' }}
             current={page}

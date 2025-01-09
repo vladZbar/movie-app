@@ -32,8 +32,8 @@ export default class MoviesService {
     }
   }
 
-  getByNameFilms(name) {
-    return this.getResourse(`?query=${name}&include_adult=false&language=en-US&page=1`)
+  getByNameFilms(name, page) {
+    return this.getResourse(`?query=${name}&include_adult=false&language=en-US&page=${page}`)
   }
 
   async createGuestSession() {

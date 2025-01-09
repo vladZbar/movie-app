@@ -50,7 +50,6 @@ const App = () => {
     }
   }, [page, guestSessionId, moviesService])
 
-
   return (
     <div>
       <AppProvider>

@@ -9,6 +9,7 @@ import SearchForm from '../SearchForm/SearchForm'
 import { Pagination } from 'antd'
 import Message from '../UI/Message'
 import { AppContext } from '../App/AppContext'
+import { genresFilter } from '../../utils/utils'
 
 export default class MovieList extends Component {
   state = {
@@ -65,9 +66,6 @@ export default class MovieList extends Component {
     this.fetchMoviesDebounced.cancel()
   }
 
-  genresFilter(ids, genres) {
-    return genres.filter((obj) => ids.includes(obj.id))
-  }
 
   render() {
     const { movies, loading, error, searchName, page, total } = this.state
@@ -82,7 +80,8 @@ export default class MovieList extends Component {
         realeaseDate={movie.release_date}
         description={movie.overview}
         guestSessionId={guestSessionId}
-        filteredGenres={this.genresFilter(movie.genre_ids, genres)}
+        filteredGenres={genresFilter(movie.genre_ids, genres)}
+        raiting={movie.vote_average.toFixed(1)}
       />
     ))
     return (
@@ -92,13 +91,13 @@ export default class MovieList extends Component {
           {error ? <Error /> : false}
           {!loading ? elements : <Loader />}
         </ul>
-        {!loading && movies.length && Number(total) / 20 > 1 ? (
+        {!loading && movies.length && Number(total) > 20 ? (
           <Pagination
             style={{ marginBottom: '20px', justifySelf: 'center' }}
             current={page}
             onChange={this.pageChange}
             total={total}
-            pageSize={20}
+            pageSize={1}
             showSizeChanger={false}
           />
         ) : !loading && !movies.length && !error ? (

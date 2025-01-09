@@ -4,7 +4,7 @@
 }
 
 .imgCard {
-  width: 200px;
+  width: 167px;
   height: 250px;
 }
 
@@ -27,13 +27,18 @@
     display: none;
   }
 
+  .imageContainer {
+    width: 167px;
+    height: 250px;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
     gap: 5px;
     box-shadow: 1px 2px 5px 1px #b8b8b8;
     padding: 15px;
-    overflow: hidden;
+    overflow: auto;
     height: 251px;
   }
 
@@ -65,9 +70,11 @@
   .item {
     width: 100%;
   }
+
   .imgCard {
     display: none;
   }
+
   .imgCard__mob {
     height: 91px;
     width: 60px;
