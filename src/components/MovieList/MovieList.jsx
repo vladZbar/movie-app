@@ -66,7 +66,6 @@ export default class MovieList extends Component {
     this.fetchMoviesDebounced.cancel()
   }
 
-
   render() {
     const { movies, loading, error, searchName, page, total } = this.state
     const { guestSessionId } = this.props
